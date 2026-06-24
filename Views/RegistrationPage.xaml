@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EvacuationDashboard.Views.RegistrationPage"
+             Title="Register"
+             BackgroundColor="#FFF0F5"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Center" Padding="20" Margin="0,40,0,40">
+
+            <Border BackgroundColor="White"
+                    Stroke="#FF69B4"
+                    StrokeThickness="2"
+                    StrokeShape="RoundRectangle 20"
+                    Padding="30,35,30,35"
+                    WidthRequest="400"
+                    HorizontalOptions="Center">
+
+                <VerticalStackLayout Spacing="20">
+
+                    <Label Text="Join the System!"
+                           FontFamily="GoogleSansRegular"
+                           FontSize="14"
+                           TextColor="#C71585"
+                           HorizontalOptions="Center" />
+
+                    <Label Text="CREATE ACCOUNT"
+                           FontFamily="GoogleSansBold"
+                           FontSize="22"
+                           TextColor="#FF1493"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Margin="0,-12,0,0"/>
+
+                    <Label Text="REGISTER NEW PERSONNEL IDENTITY"
+                           FontFamily="GoogleSansRegular"
+                           FontSize="10"
+                           TextColor="#706573"
+                           CharacterSpacing="1.5"
+                           HorizontalOptions="Center"
+                           Margin="0,-12,0,10"/>
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="ASSIGN ROLE" FontFamily="GoogleSansBold" FontSize="11" TextColor="#C71585" CharacterSpacing="1"/>
+                        <Border Stroke="#FFB6C1" StrokeThickness="1.5" StrokeShape="RoundRectangle 10" BackgroundColor="#FFF5F7" HeightRequest="45" Padding="10,0,10,0">
+                            <Picker x:Name="RolePicker"
+                                    FontFamily="GoogleSansRegular"
+                                    FontSize="14"
+                                    TextColor="Black"
+                                    VerticalOptions="Center">
+                                <Picker.Items>
+                                    <x:String>Maintenance Engineer</x:String>
+                                    <x:String>Building Manager</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="NEW USERNAME" FontFamily="GoogleSansBold" FontSize="11" TextColor="#C71585" CharacterSpacing="1"/>
+                        <Border Stroke="#FFB6C1" StrokeThickness="1.5" StrokeShape="RoundRectangle 10" BackgroundColor="#FFF5F7" HeightRequest="45" Padding="15,0,15,0">
+                            <Entry x:Name="RegUsernameEntry"
+                                   Placeholder="Enter new username"
+                                   FontFamily="GoogleSansRegular"
+                                   FontSize="14"
+                                   PlaceholderColor="Gray"
+                                   TextColor="Black"
+                                   VerticalOptions="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="NEW PASSWORD" FontFamily="GoogleSansBold" FontSize="11" TextColor="#C71585" CharacterSpacing="1"/>
+                        <Border Stroke="#FFB6C1" StrokeThickness="1.5" StrokeShape="RoundRectangle 10" BackgroundColor="#FFF5F7" HeightRequest="45" Padding="15,0,5,0">
+                            <Grid ColumnDefinitions="*, Auto">
+                                <Entry x:Name="RegPasswordEntry"
+                                       Grid.Column="0"
+                                       Placeholder="Enter new password"
+                                       IsPassword="True"
+                                       FontFamily="GoogleSansRegular"
+                                       FontSize="13" 
+                                       PlaceholderColor="Gray"
+                                       TextColor="Black"
+                                       VerticalOptions="Center"/>
+
+                                <Button x:Name="ToggleRegPasswordBtn"
+                                        Grid.Column="1"
+                                        Text="🙈"
+                                        FontFamily="GoogleSansRegular"
+                                        FontSize="16"
+                                        BackgroundColor="Transparent"
+                                        WidthRequest="40"
+                                        HeightRequest="40"
+                                        Padding="0"
+                                        VerticalOptions="Center"
+                                        Clicked="OnTogglePasswordClicked"/>
+                            </Grid>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <Button Text="NEXT: CAPTURE FACE"
+                            FontFamily="GoogleSansBold"
+                            BackgroundColor="#FF1493"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="50"
+                            Margin="0,15,0,0"
+                            Clicked="OnRegisterAndCaptureClicked" />
+
+                    <Button Text="Back to Sign In"
+                            FontFamily="GoogleSansRegular"
+                            FontSize="12"
+                            TextColor="#db7093"
+                            BackgroundColor="Transparent"
+                            HorizontalOptions="Center"
+                            Margin="0,5,0,0"
+                            Clicked="OnBackToLoginClicked"/>
+
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
